@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>StudyOS Reminders</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/png" href="studyOSlogo.png">
+  <link rel="apple-touch-icon" href="studyOSlogo.png">
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar" aria-label="StudyOS navigation">
+      <div class="brand">
+        <img class="brand-mark" src="studyOSlogo.png" alt="StudyOS Logo">
+        <div>
+          <h1>StudyOS</h1>
+          <p>by Ethan Roderick</p>
+        </div>
+      </div>
+
+      <nav class="nav-list" aria-label="Main navigation">
+        <a href="index.html" data-nav-page="index.html">Dashboard</a>
+        <a href="reminders.html" data-nav-page="reminders.html">Reminders</a>
+        <a href="productivity.html" data-nav-page="productivity.html">Productivity</a>
+      </nav>
+    </aside>
+
+    <main class="main-content">
+      <header class="page-header">
+        <div>
+          <p class="eyebrow">Reminders</p>
+          <h2>Assignments, tests, and personal notes</h2>
+        </div>
+        <p>Everything here is saved locally in this browser.</p>
+      </header>
+
+      <section class="dashboard-grid reminders-grid">
+        <article class="panel large-panel" id="assignments">
+          <div class="panel-header">
+            <div>
+              <p class="section-kicker">Assignment Tracker</p>
+              <h3>My assignments</h3>
+            </div>
+          </div>
+
+          <form class="stacked-form" id="assignmentForm">
+            <label>
+              Lesson name
+              <input type="text" id="assignmentLesson" placeholder="Ex: Math">
+            </label>
+            <label>
+              Assignment name <span class="optional-label">Optional</span>
+              <input type="text" id="assignmentTitle" placeholder="Ex: Chapter 4 worksheet">
+            </label>
+            <label>
+              Due date
+              <input type="date" id="assignmentDate">
+            </label>
+            <button type="submit">Add assignment</button>
+          </form>
+
+          <div class="toolbar">
+            <input type="search" id="assignmentSearch" placeholder="Search assignments...">
+            <select id="assignmentFilter" aria-label="Filter assignments">
+              <option value="all">All tasks</option>
+              <option value="active">Remaining</option>
+              <option value="completed">Completed</option>
+              <option value="overdue">Overdue</option>
+            </select>
+          </div>
+
+          <div class="list" id="assignmentList"></div>
+        </article>
+
+        <article class="panel" id="tests">
+          <div class="panel-header">
+            <div>
+              <p class="section-kicker">Test Countdown</p>
+              <h3>My tests</h3>
+            </div>
+          </div>
+
+          <form class="stacked-form" id="testForm">
+            <label>
+              Lesson name
+              <input type="text" id="testLesson" placeholder="Ex: Biology">
+            </label>
+            <label>
+              Test date
+              <input type="date" id="testDate">
+            </label>
+            <button type="submit">Add test</button>
+          </form>
+
+          <div class="list compact-list" id="testList"></div>
+        </article>
+
+        <article class="panel" id="personalReminders">
+          <div class="panel-header">
+            <div>
+              <p class="section-kicker">Personal Reminders</p>
+              <h3>My reminders</h3>
+            </div>
+          </div>
+
+          <form class="stacked-form" id="personalReminderForm">
+            <label>
+              Title
+              <input type="text" id="personalReminderTitle" placeholder="Ex: Bring calculator">
+            </label>
+            <label>
+              Type
+              <select id="personalReminderType" aria-label="Reminder type">
+                <option value="General">General</option>
+                <option value="Study">Study</option>
+                <option value="Other">Other</option>
+              </select>
+            </label>
+            <label>
+              Date
+              <input type="date" id="personalReminderDate">
+            </label>
+            <button type="submit">Add personal reminder</button>
+          </form>
+
+          <div class="list compact-list" id="personalReminderList"></div>
+        </article>
+      </section>
+    </main>
+  </div>
+
+  <script type="module" src="js/reminders.js"></script>
+</body>
+</html>

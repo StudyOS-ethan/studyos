@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>StudyOS Dashboard</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/png" href="studyOSlogo.png">
+  <link rel="apple-touch-icon" href="studyOSlogo.png">
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar" aria-label="StudyOS navigation">
+      <div class="brand">
+        <img class="brand-mark" src="studyOSlogo.png" alt="StudyOS Logo">
+        <div>
+          <h1>StudyOS</h1>
+          <p>by Ethan Roderick</p>
+        </div>
+      </div>
+
+      <nav class="nav-list" aria-label="Main navigation">
+        <a href="index.html" data-nav-page="index.html">Dashboard</a>
+        <a href="reminders.html" data-nav-page="reminders.html">Reminders</a>
+        <a href="productivity.html" data-nav-page="productivity.html">Productivity</a>
+      </nav>
+    </aside>
+
+    <main class="main-content">
+      <header class="hero" id="overview">
+        <div>
+          <p class="eyebrow" id="todayText">Today</p>
+          <h2>Plan smarter. Study calmer.</h2>
+          <p class="hero-copy">Track assignments, count down to tests, and build a study streak that actually sticks.</p>
+        </div>
+        <div class="hero-panel">
+          <span>Current streak</span>
+          <strong id="heroStreak">0 days</strong>
+          <small>Study at least 15 minutes today to keep it alive.</small>
+        </div>
+      </header>
+
+      <section class="stats-grid" aria-label="Study statistics">
+        <article class="stat-card">
+          <span>Total assignments</span>
+          <strong id="totalTasksStat">0</strong>
+        </article>
+        <article class="stat-card">
+          <span>Completed</span>
+          <strong id="completedTasksStat">0</strong>
+        </article>
+        <article class="stat-card">
+          <span>Upcoming tests</span>
+          <strong id="upcomingExamsStat">0</strong>
+        </article>
+        <article class="stat-card">
+          <span>Study hours</span>
+          <strong id="studyHoursStat">0.0</strong>
+        </article>
+      </section>
+
+      <section class="dashboard-grid dashboard-overview-grid">
+        <article class="panel">
+          <div class="panel-header">
+            <div>
+              <p class="section-kicker">Progress</p>
+              <h3>Weekly pulse</h3>
+            </div>
+          </div>
+
+          <div class="progress-block">
+            <div class="progress-label">
+              <span>Completion</span>
+              <strong id="completionPercent">0%</strong>
+            </div>
+            <div class="progress-track">
+              <div class="progress-fill" id="completionBar"></div>
+            </div>
+          </div>
+
+          <div class="progress-mini-grid">
+            <div>
+              <span>Remaining</span>
+              <strong id="remainingTasks">0</strong>
+            </div>
+            <div>
+              <span>Longest streak</span>
+              <strong id="longestStreak">0</strong>
+            </div>
+          </div>
+        </article>
+
+        <article class="panel">
+          <div class="panel-header">
+            <div>
+              <p class="section-kicker">Local Mode</p>
+              <h3>Your browser only</h3>
+            </div>
+          </div>
+          <div class="info-note">
+            <strong>Manual reminders</strong>
+            <p>Assignments, tests, and personal reminders are saved on this device only.</p>
+          </div>
+        </article>
+      </section>
+    </main>
+  </div>
+
+  <script type="module" src="js/dashboard.js"></script>
+</body>
+</html>

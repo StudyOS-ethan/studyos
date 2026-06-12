@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>StudyOS Productivity</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/png" href="studyOSlogo.png">
+  <link rel="apple-touch-icon" href="studyOSlogo.png">
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar" aria-label="StudyOS navigation">
+      <div class="brand">
+        <img class="brand-mark" src="studyOSlogo.png" alt="StudyOS Logo">
+        <div>
+          <h1>StudyOS</h1>
+          <p>by Ethan Roderick</p>
+        </div>
+      </div>
+
+      <nav class="nav-list" aria-label="Main navigation">
+        <a href="index.html" data-nav-page="index.html">Dashboard</a>
+        <a href="reminders.html" data-nav-page="reminders.html">Reminders</a>
+        <a href="productivity.html" data-nav-page="productivity.html">Productivity</a>
+      </nav>
+    </aside>
+
+    <main class="main-content">
+      <header class="page-header">
+        <div>
+          <p class="eyebrow">Productivity</p>
+          <h2>Lock in and track progress</h2>
+        </div>
+        <p>A streak day counts after 15 minutes of total study time in one day.</p>
+      </header>
+
+      <section class="dashboard-grid productivity-grid">
+        <article class="panel" id="timer">
+          <div class="panel-header">
+            <div>
+              <p class="section-kicker">Study Timer</p>
+              <h3>Focus session</h3>
+            </div>
+          </div>
+
+          <div class="timer-face" id="timerDisplay">00:00:00</div>
+          <div class="button-row">
+            <button type="button" id="startTimerBtn">Start</button>
+            <button type="button" class="secondary" id="pauseTimerBtn">Pause</button>
+            <button type="button" class="ghost" id="resetTimerBtn">Reset</button>
+          </div>
+          <p class="helper-text">Your total study time is saved in this browser.</p>
+        </article>
+
+        <article class="panel" id="progress">
+          <div class="panel-header">
+            <div>
+              <p class="section-kicker">Progress</p>
+              <h3>Weekly pulse</h3>
+            </div>
+          </div>
+
+          <section class="stats-grid compact-stats" aria-label="Productivity statistics">
+            <article class="stat-card">
+              <span>Study hours</span>
+              <strong id="studyHoursStat">0.0</strong>
+            </article>
+            <article class="stat-card">
+              <span>Current streak</span>
+              <strong id="heroStreak">0</strong>
+            </article>
+          </section>
+
+          <div class="progress-block">
+            <div class="progress-label">
+              <span>Completion</span>
+              <strong id="completionPercent">0%</strong>
+            </div>
+            <div class="progress-track">
+              <div class="progress-fill" id="completionBar"></div>
+            </div>
+          </div>
+
+          <div class="progress-mini-grid">
+            <div>
+              <span>Remaining</span>
+              <strong id="remainingTasks">0</strong>
+            </div>
+            <div>
+              <span>Longest streak</span>
+              <strong id="longestStreak">0</strong>
+            </div>
+          </div>
+        </article>
+      </section>
+    </main>
+  </div>
+
+  <script type="module" src="js/productivity.js"></script>
+</body>
+</html>
